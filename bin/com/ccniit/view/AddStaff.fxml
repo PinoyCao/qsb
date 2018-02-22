@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<!-- <?import jfxtras.labs.scene.control.gauge.Clock?> -->
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="367.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ccniit.controller.ManageAddStaffController">
+  <children>
+    <BorderPane prefHeight="655.0" prefWidth="415.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+      <left>
+        <AnchorPane prefHeight="412.0" prefWidth="18.0" />
+      </left>
+      <top>
+        <AnchorPane prefHeight="64.0" prefWidth="670.0">
+               <children>
+                  <Button fx:id="saveInfo" layoutX="261.0" layoutY="15.0" mnemonicParsing="false" onAction="#saveInfo" prefHeight="35.0" prefWidth="71.0" text="保存" visible="false" />
+                 <Label id="warn" fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="24.0" prefHeight="16.0" prefWidth="366.0" styleClass="labelX, waring-label" />
+               </children>
+        </AnchorPane>
+      </top>
+         <bottom>
+            <AnchorPane prefHeight="33.0" prefWidth="366.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="584.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="28.0" layoutY="25.0" styleClass="labelX" text="登录名：" />
+				  <Label layoutX="28.0" layoutY="85.0" styleClass="labelX" text="所属公司：" />
+				  <Label layoutX="28.0" layoutY="145.0" styleClass="labelX" text="密       码：" />
+                  <Label layoutX="28.0" layoutY="205.0" styleClass="labelX" text="确认密码：" />
+                  <Label layoutX="28.0" layoutY="265.0" styleClass="labelX" text="工      号：" />
+                  <Label layoutX="28.0" layoutY="325.0" styleClass="labelX" text="真实姓名：" />
+                  <Label layoutX="28.0" layoutY="385.0" styleClass="labelX" text="电       话：" />
+                  <Label layoutX="28.0" layoutY="445.0" styleClass="labelX" text="手       机：" />	
+                  <Label layoutX="24.0" layoutY="505.0" styleClass="labelX" text="邮        箱：" />	
+                  <Label layoutX="24.0" layoutY="565.0" styleClass="labelX" text="备        注：" />					  
+				  <TextField fx:id="loginName" layoutX="141.0" layoutY="18.0" prefHeight="31.0" prefWidth="143.0" promptText="必填" />				  
+                  <ChoiceBox fx:id="companyId" layoutX="141.0" layoutY="78.0" prefHeight="31.0" prefWidth="143.0" />
+                  <PasswordField fx:id="password" layoutX="141.0" layoutY="138.0" prefHeight="31.0" prefWidth="143.0" promptText="必填" />
+                  <PasswordField fx:id="repwd" layoutX="141.0" layoutY="198.0" prefHeight="31.0" prefWidth="143.0" promptText="必填" />
+                  <TextField fx:id="no" layoutX="141.0" layoutY="258.0" prefHeight="31.0" prefWidth="143.0" promptText="必填" />
+				  <TextField fx:id="name" layoutX="141.0" layoutY="318.0" prefHeight="31.0" prefWidth="143.0" promptText="必填" />
+                  <TextField fx:id="phone" layoutX="141.0" layoutY="378.0" prefHeight="31.0" prefWidth="143.0" />
+                  <TextField fx:id="mobile" layoutX="141.0" layoutY="438.0" prefHeight="31.0" prefWidth="143.0" />
+                  <TextField fx:id="email" layoutX="143.0" layoutY="498.0" prefHeight="31.0" prefWidth="143.0" />
+                  <TextArea fx:id="remarks" layoutX="143.0" layoutY="558.0" prefHeight="62.0" prefWidth="143.0" />
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="632.0" prefWidth="28.0" BorderPane.alignment="CENTER" />
+         </right>
+    </BorderPane>
+  </children>
+      <stylesheets>
+    <URL value="@Login.css" />
+  </stylesheets>
+</AnchorPane>

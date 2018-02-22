@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<!-- <?import jfxtras.labs.scene.control.gauge.Clock?> -->
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="380.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ccniit.controller.MainController">
+  <children>
+    <BorderPane prefHeight="655.0" prefWidth="415.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+      <left>
+        <AnchorPane prefHeight="573.0" prefWidth="14.0" />
+      </left>
+      <right>
+        <AnchorPane prefHeight="608.0" prefWidth="0.0" />
+      </right>
+      <top>
+        <AnchorPane prefHeight="100.0" prefWidth="415.0">
+          <children>
+                  <Label fx:id="title" alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="18.0" prefHeight="64.0" prefWidth="307.0" text="GAS气瓶管理系统">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5113636363636364" centerY="1.0" radius="0.5">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+          </children>
+        </AnchorPane>
+      </top>
+         <bottom>
+            <AnchorPane prefHeight="59.0" prefWidth="403.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="20.0" prefHeight="20.0" prefWidth="371.0" text="Copyright by 哈尔滨学院软件学院" />
+               </children></AnchorPane>
+         </bottom>
+         <center>
+            <FlowPane prefHeight="573.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox id="parent" prefHeight="573.0" prefWidth="385.0">
+                     <children>
+                        <AnchorPane prefHeight="81.0" prefWidth="385.0">
+                           <children>
+                              <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" prefHeight="44.0" prefWidth="124.0" text="Label" textFill="#f5e500">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="260.0" layoutY="9.0" mnemonicParsing="false" onAction="#editcur" text="修改密码" />
+                              <ImageView fx:id="image" fitHeight="68.0" fitWidth="69.0" layoutX="37.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+							  <image>
+									<Image url="@test.jpg" />
+							  </image>
+							  </ImageView>
+                           </children></AnchorPane>
+					 
+					 
+					 
+                        <HBox prefHeight="125.0" prefWidth="415.0">
+                           <children>
+                              <AnchorPane prefHeight="125.0" prefWidth="40.0" />
+                              <Button fx:id="expiredCylinder" mnemonicParsing="false" onAction="#expiredCylinder" prefHeight="90.0" prefWidth="105.0" text="所有到期气瓶" />
+                              <AnchorPane prefHeight="116.0" prefWidth="50.0" />
+                              <Button fx:id="addCylinder" mnemonicParsing="false" onAction="#addCylinder" prefHeight="90.0" prefWidth="105.0" text="气瓶注册" />
+                              <AnchorPane prefHeight="186.0" prefWidth="35.0" />
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="0.0" prefWidth="385.0" />
+                        <HBox prefHeight="125.0" prefWidth="415.0">
+                           <children>
+                              <AnchorPane prefHeight="125.0" prefWidth="40.0" />
+                              <Button fx:id="userView" mnemonicParsing="false" onAction="#userView" prefHeight="90.0" prefWidth="105.0" text="查看单位人事" />
+                              <AnchorPane prefHeight="154.0" prefWidth="50.0" />
+                              <Button fx:id="companyView" mnemonicParsing="false" onAction="#companyView" prefHeight="90.0" prefWidth="105.0" text="查看单位信息" />
+                              <AnchorPane prefHeight="186.0" prefWidth="27.0" />
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="0.0" prefWidth="385.0" />
+                        <HBox prefHeight="107.0" prefWidth="373.0">
+                           <children>
+                              <AnchorPane prefHeight="100.0" prefWidth="40.0" />
+                              <Button fx:id="cylinderDetail" mnemonicParsing="false" onAction="#cylinderDetail" prefHeight="90.0" prefWidth="105.0" text="追溯气瓶信息" />
+                              <AnchorPane prefHeight="164.0" prefWidth="50.0" />
+                              <Button fx:id="willExpire" mnemonicParsing="false" onAction="#willExpire" prefHeight="90.0" prefWidth="105.0" text="即将到期气瓶" />
+                              <AnchorPane prefHeight="186.0" prefWidth="35.0" />
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="23.0" prefWidth="385.0" />
+                        <HBox prefHeight="92.0" prefWidth="373.0">
+                           <children>
+                              <AnchorPane prefHeight="100.0" prefWidth="40.0" />
+                              <Button fx:id="monthRecord" mnemonicParsing="false" onAction="#monthRecord" prefHeight="90.0" prefWidth="105.0" text="月记录查询" />
+                              <AnchorPane prefHeight="164.0" prefWidth="50.0" />
+                              <Button fx:id="yearRecord" mnemonicParsing="false" onAction="#yearRecord" prefHeight="90.0" prefWidth="105.0" text="年记录查询" />
+                              <AnchorPane prefHeight="186.0" prefWidth="35.0" />
+                           </children>
+                        </HBox>
+						
+						
+						
+                     </children>
+                  </VBox>
+               </children></FlowPane>
+         </center>
+    </BorderPane>
+  </children>
+    <stylesheets>
+    <URL value="@Login.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import jfxtras.labs.scene.control.CalendarTextField?>
+
+<AnchorPane prefHeight="588.0" prefWidth="798.0" styleClass="background" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ccniit.controller.MonthRecordController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <AnchorPane prefHeight="55.0" prefWidth="669.0" styleClass="top-segment">
+          <children>
+            <!-- <Button mnemonicParsing="false" onAction="#showChartAction" prefWidth="111.5" text="图表显示" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="12.5" /> -->
+           
+          </children>
+        </AnchorPane>
+      </bottom>
+      <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="当月记录（表格）">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="359.0">
+                  <children>
+                    <BorderPane prefHeight="110.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <bottom>
+                        <AnchorPane prefHeight="47.999900000002526" prefWidth="674.0" styleClass="background">
+                          <children>
+                          
+                          </children>
+                        </AnchorPane>
+                      </bottom>
+                      <center>
+                        <TableView fx:id="recordTable" prefHeight="207.0" prefWidth="674.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="记录ID" fx:id="recordIdCol" />
+                            <TableColumn prefWidth="75.0" text="气瓶ID" fx:id="cylinderId" />
+                            <TableColumn prefWidth="75.0" text="操作员ID" fx:id="userId" />
+                            <TableColumn prefWidth="150.0" text="操作员所在公司ID" fx:id="companyId" />
+                            <TableColumn prefWidth="100.0" text="操作内容" fx:id="operation" />
+                            <TableColumn prefWidth="100.0" text="具体内容" fx:id="description" />
+                            <TableColumn prefWidth="150.0" text="操作时间" fx:id="date" />
+                          </columns>
+                        </TableView>
+                      </center>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab" text="当月记录（折线图）">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <bottom>
+                        <AnchorPane prefHeight="56.0" prefWidth="674.0" styleClass="background" />
+                      </bottom>
+                      <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <LineChart fx:id="lineChart" prefHeight="323.0" prefWidth="607.0" styleClass="labelX" title="操作记录折线图" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <xAxis>
+                                <NumberAxis fx:id="xAxis" styleClass="labelX" label="日" side="BOTTOM" />
+                              </xAxis>
+                              <yAxis>
+                                <NumberAxis id="y" fx:id="yAxis" styleClass="labelX" label="次数" side="LEFT" />
+                              </yAxis>
+                            </LineChart>
+                          </children>
+                        </AnchorPane>
+                      </center>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </center>
+      <left>
+        <AnchorPane prefHeight="359.0" prefWidth="14.0" />
+      </left>
+      <right>
+        <AnchorPane prefHeight="351.0" prefWidth="14.0" />
+      </right>
+      <top>
+        <AnchorPane prefHeight="55.000099999997474" prefWidth="702.0">
+          <children>
+            <TextField fx:id="searchId"  prefWidth="150.0"  AnchorPane.topAnchor="12.0" AnchorPane.rightAnchor="364.0" promptText="输入气瓶id" />
+            <Button mnemonicParsing="false" onAction="#search" text="搜索" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="17.0" />
+            <ChoiceBox layoutY="21.0" fx:id="state" prefWidth="150.0" AnchorPane.topAnchor="12.0" AnchorPane.rightAnchor="164.0" />
+            <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="334.0" layoutY="21.0" prefWidth="131.0" styleClass="labelX, waring-label" />
+          </children>
+        </AnchorPane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

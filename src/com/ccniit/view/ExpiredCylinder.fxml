@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- <?import jfxtras.labs.scene.control.gauge.Clock?> -->
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="902.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ccniit.controller.ManageExpiredCylinderController">
+  <children>
+    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <VBox prefHeight="147.0" prefWidth="900.0">
+          <children>
+            <AnchorPane prefHeight="147.0" prefWidth="874.0" styleClass="top-segment">
+                     <children>
+                        <Button layoutX="504.0" layoutY="19.0" mnemonicParsing="false" onAction="#lastpage" prefHeight="53.0" prefWidth="111.0" text="上一页" />
+                        <Button layoutX="739.0" layoutY="19.0" mnemonicParsing="false" onAction="#nextpage" prefHeight="53.0" prefWidth="111.0" text="下一页" />
+                        <Label layoutX="647.0" layoutY="36.0" text="第" textFill="#fcf9f9" />
+                        <Label fx:id="page" alignment="CENTER" contentDisplay="CENTER" layoutX="647.0" layoutY="36.0" prefHeight="20.0" prefWidth="68.0" text="？" textFill="WHITE" />
+                        <Label layoutX="700.0" layoutY="36.0" text="页" textFill="WHITE" />
+                        <Button layoutX="136.0" layoutY="23.0" mnemonicParsing="false" onAction="#exportExcel" prefHeight="45.0" prefWidth="236.0" text="导出Excel文件" />
+                     </children>
+            </AnchorPane>
+          </children>
+        </VBox>
+      </bottom>
+      <center>
+        <SplitPane focusTraversable="true" prefHeight="472.0" prefWidth="872.0">
+          <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="870.0">
+              <children>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <top>
+                    <AnchorPane prefHeight="45.0" prefWidth="299.0" styleClass="background">
+                      <children>
+                        <Label layoutX="14.0" layoutY="3.0" prefHeight="39.0" prefWidth="148.0" styleClass="labelX" text="在线查看已经到期气瓶" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0" />
+                        <Label layoutX="683.0" layoutY="6.0" prefHeight="33.0" prefWidth="34.0" textFill="#f80202" />
+                      </children>
+                    </AnchorPane>
+                  </top>
+                           <bottom>
+                    <TableView fx:id="CylinderTable" prefHeight="497.0" prefWidth="833.0" BorderPane.alignment="CENTER">
+                      <columns>
+						<TableColumn fx:id="id" prefWidth="87.0" style="" text="气瓶编号" />
+						<TableColumn fx:id="companyId" prefWidth="107.0" text="所属公司" />
+						<TableColumn fx:id="state" maxWidth="121.0" prefWidth="97.0" text="状态" />
+                        <TableColumn fx:id="type" prefWidth="81.0" text="型号" />
+                        <TableColumn fx:id="contentName" prefWidth="104.0" text="内容物中文名" />
+                        <TableColumn fx:id="testCycle" prefWidth="100.0" text="检验周期" />
+                        <TableColumn fx:id="serviceLife" prefWidth="89.0" text="使用期限" />
+                        <TableColumn fx:id="location" prefWidth="108.0" text="所在位置" />
+                        <TableColumn fx:id="" prefWidth="93.0" text="操作" />
+                      </columns>
+                    </TableView>
+                           </bottom>
+                </BorderPane>
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+      </center>
+      <left>
+        <AnchorPane prefHeight="459.0" prefWidth="14.0" />
+      </left>
+      <right>
+        <AnchorPane prefHeight="542.0" prefWidth="19.0" />
+      </right>
+      <top>
+        <AnchorPane prefHeight="43.0" prefWidth="850.0">
+          <children>
+            <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="12.0" prefWidth="247.0" styleClass="labelX, waring-label" />
+          </children>
+        </AnchorPane>
+      </top>
+    </BorderPane>
+  </children>
+      <stylesheets>
+    <URL value="@Login.css" />
+  </stylesheets>
+</AnchorPane>
